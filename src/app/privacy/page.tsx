@@ -7,15 +7,15 @@ import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
 export const metadata: Metadata = {
   title: 'Privacy — gh0st',
-  description: 'Privacy policy and data handling for gh0st — local-first encrypted AI client with no cloud, no analytics, no tracking.',
+  description: 'Privacy policy and data handling for gh0st — local-first AI with a current encrypted CLI workflow, no cloud, no analytics, and no tracking.',
 };
 
 const dataOnDevice = [
   'Conversations and messages',
   'Attachments and files',
   'Agents and preferences',
-  'Encrypted continuation state',
-  'API keys (encrypted in vault)',
+  'CLI encrypted continuation state',
+  'CLI vault-encrypted API keys',
   'Local search index',
 ];
 
@@ -36,8 +36,8 @@ const privacyModes = [
 ];
 
 const yourRights = [
-  { right: 'Access', detail: 'All your data is in ~/.gh0st/ (encrypted)' },
-  { right: 'Portability', detail: 'Encrypted export/import between devices' },
+  { right: 'Access', detail: 'CLI data is in ~/.gh0st/ (encrypted); native client path is still being wired' },
+  { right: 'Portability', detail: 'CLI encrypted export/import between devices' },
   { right: 'Deletion', detail: '<code>gh0st wipe</code> removes all local data' },
   { right: 'Control', detail: 'Toggle tools, agents, privacy modes per conversation' },
 ];
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
                 Privacy Policy
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl mx-auto">
-                No legalese. Just the technical reality of how your data flows.
+                No legalese. The CLI provides the current encrypted workflow; native macOS and browser vault integration remains pending in this release candidate.
               </p>
             </header>
 
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
                 <svg className="h-6 w-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                What Stays On Your Device (Encrypted)
+                What Stays On Your Device (CLI Encrypted; Native Integration Pending)
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {dataOnDevice.map((item, i) => (

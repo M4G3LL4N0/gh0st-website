@@ -8,7 +8,7 @@ const platforms = [
   {
     id: 'macos',
     name: 'macOS',
-    status: 'From source / Public binary coming',
+    status: 'v1.0.0-rc.1 available',
     statusColor: 'accent',
     icon: (
       <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -16,23 +16,22 @@ const platforms = [
       </svg>
     ),
     features: [
-      'Native window with transparent titlebar',
+      'Native Tauri window',
       'Menu bar integration & system tray',
       'Global shortcut (⌘⇧G)',
-      'File drag & drop, native picker',
-      'Dark/Light mode sync',
-      'Keyboard shortcuts & touchpad gestures',
-      'Secure Enclave vault with Face ID/Touch ID',
-      'Auto-lock (1/5/15 min / never)',
-      'Background privacy blur',
-      'Restart persistence',
+      'File picker integration',
+      'Dark/Light mode controls',
+      'Local conversation UI',
+      'xAI Responses API integration',
+      'Window hide/show controls',
+      'Ad-hoc signed Apple Silicon build',
     ],
     cta: {
-      label: 'Build from Source',
-      href: '/docs/macos',
-      variant: 'outline' as const,
+      label: 'Download DMG',
+      href: 'https://github.com/M4G3LL4N0/gh0st/releases/download/v1.0.0-rc.1/gh0st_1.0.0-rc.1_aarch64.dmg',
+      variant: 'primary' as const,
     },
-    note: 'Ad-hoc signed. Public DMG with release.',
+    note: 'Apple Silicon · ad-hoc signed · native vault and Settings flow pending.',
   },
   {
     id: 'cli',
@@ -84,7 +83,7 @@ const platforms = [
       'Markdown + syntax highlighting',
       'Conversation history sidebar',
       'Settings: theme, model, privacy mode',
-      'IndexedDB encrypted storage',
+      'Local browser UI foundation',
       'Works offline after first load',
     ],
     cta: {
@@ -109,7 +108,7 @@ const platforms = [
       'Keyboard avoidance & touch targets',
       'Dark/Light mode & reduced motion',
       'Background privacy (blur on switch)',
-      'Secure Enclave vault with Face ID/Touch ID',
+      'Planned encrypted local vault',
       'Native gestures & haptics',
       'Simulator build pending xcodegen/cocoapods',
       'Device build requires Apple Developer Program',

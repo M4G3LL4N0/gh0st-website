@@ -58,7 +58,7 @@ const demoScenarios = [
 ];
 
 const privacyInspectorState = {
-  vault: { status: 'Encrypted + Unlocked', color: 'accent' },
+  vault: { status: 'CLI encrypted · demo', color: 'accent' },
   conversations: { status: 'This device', color: 'accent' },
   files: { status: 'This device', color: 'accent' },
   xaiStore: { status: 'store=false', color: 'accent' },

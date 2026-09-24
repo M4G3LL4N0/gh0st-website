@@ -92,8 +92,8 @@ export function WhyGh0st() {
                 </svg>
               </span>
               <div>
-                <p className="font-medium text-neutral-100 dark:text-neutral-900">Conversations encrypted on your device</p>
-                <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">AES-256-GCM, keys never leave your vault. Provider sees nothing.</p>
+                <p className="font-medium text-neutral-100 dark:text-neutral-900">Conversations stay on your device</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">The CLI encrypts local storage; native client persistence is still being wired.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-neutral-950/50 dark:bg-neutral-200/50 rounded-lg border-l-2 border-accent-500">
@@ -114,8 +114,8 @@ export function WhyGh0st() {
                 </svg>
               </span>
               <div>
-                <p className="font-medium text-neutral-100 dark:text-neutral-900">API keys in Secure Enclave / encrypted vault</p>
-                <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">Hardware-backed on macOS/iOS, Argon2id-encrypted file on CLI</p>
+                <p className="font-medium text-neutral-100 dark:text-neutral-900">API keys stay out of gh0st cloud</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">The CLI uses an encrypted vault; native Settings and keychain integration are pending.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-neutral-950/50 dark:bg-neutral-200/50 rounded-lg border-l-2 border-accent-500">

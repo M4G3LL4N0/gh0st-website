@@ -7,7 +7,7 @@ import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
 export const metadata: Metadata = {
   title: 'Files & Local Search — gh0st Docs',
-  description: 'File attachment, local extraction, encrypted storage, and lexical search in gh0st',
+  description: 'File attachment, local extraction, and lexical search modules in gh0st; CLI encrypted storage is the current workflow',
 };
 
 const fileFormats = [
@@ -20,16 +20,16 @@ const fileFormats = [
 const processingSteps = [
   'File read locally (no upload)',
   'Text extracted (where applicable)',
-  'Encrypted with AES-256-GCM',
-  'Stored in encrypted vault',
+  'CLI encrypted with AES-256-GCM',
+  'Stored in CLI encrypted vault',
   'Chunked for retrieval (1000 tokens, 200 overlap)',
   'Lexical search index built locally',
 ];
 
 const filePrivacy = [
-  { aspect: 'At rest', protection: 'AES-256-GCM encrypted' },
+  { aspect: 'At rest', protection: 'CLI AES-256-GCM encrypted; native integration pending' },
   { aspect: 'In transit', protection: 'TLS 1.3 to xAI only' },
-  { aspect: 'Search index', protection: 'Local only, encrypted' },
+  { aspect: 'Search index', protection: 'Local module; CLI encryption path available' },
   { aspect: 'xAI transmission', protection: 'Only selected chunks sent' },
 ];
 
@@ -49,7 +49,7 @@ export default function FilesDocPage() {
                 Files & Local Search
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl">
-                Local-first file processing, encrypted storage, and lexical retrieval
+                Local-first file processing, lexical retrieval, and current CLI encrypted storage
               </p>
             </header>
 
@@ -114,7 +114,7 @@ export default function FilesDocPage() {
                   <li>• No vector database, no embeddings, no external service</li>
                   <li>• Search never leaves your device</li>
                   <li>• Chunk retrieval: 1000 tokens, 200 overlap</li>
-                  <li>• Encrypted index stored in vault</li>
+                  <li>• CLI encrypted index path; native integration pending</li>
                 </ul>
               </Card>
             </section>

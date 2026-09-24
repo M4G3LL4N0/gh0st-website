@@ -9,7 +9,7 @@ const terminalCommands = [
     output: [
       'GH0ST DOCTOR',
       '',
-      'CLI          ✓ installed (v1.0.0-rc)',
+      'CLI          ✓ installed (v1.0.0-rc.1)',
       'Node.js      ✓ v20.18.0',
       'pnpm         ✓ 9.0.0',
       'Rust         ✓ 1.79.0',

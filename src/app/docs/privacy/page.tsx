@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 const privacyPrinciples = [
   { title: 'No gh0st Cloud', desc: 'No backend server sees your conversations. No account required. No hosted database.' },
-  { title: 'Encrypted at Rest', desc: 'AES-256-GCM with per-purpose derived keys. Vault master key never stored in plaintext.' },
+  { title: 'Encrypted at Rest (CLI)', desc: 'AES-256-GCM with per-purpose derived keys in the CLI. Native client vault integration is pending.' },
   { title: 'ZDR Enforced', desc: 'Strict mode sends store:false and verifies x-zero-data-retention header.' },
   { title: 'Minimal Metadata', desc: 'No analytics. No telemetry by default. No crash reporting. No tracking pixels.' },
   { title: 'Explicit Tool Boundaries', desc: 'External tools (web, X, code, MCP) are opt-in. Destinations shown before use.' },
-  { title: 'Portable Encrypted Export', desc: 'Full state export encrypted with your passphrase. Import on any device.' },
+  { title: 'Portable Encrypted Export (CLI)', desc: 'Full state export encrypted with your passphrase. Native client integration is pending.' },
 ];
 
 const noTracking = [
@@ -53,7 +53,7 @@ export default function PrivacyDocPage() {
                 Privacy Model
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl">
-                Local-first architecture. No gh0st cloud. Verifiable xAI ZDR.
+                Local-first architecture. No gh0st cloud. Verifiable xAI ZDR in the CLI/client modules. Native vault wiring remains pending.
               </p>
             </header>
 
@@ -82,11 +82,11 @@ export default function PrivacyDocPage() {
                 <pre className="font-mono text-sm text-neutral-400 dark:text-neutral-600 bg-neutral-950 dark:bg-neutral-100 p-4 rounded-lg overflow-x-auto">
 YOUR DEVICE                          XAI / GROK
 ┌─────────────────────┐               ┌─────────────────────┐
-│ Encrypted convos    │               │ Inference           │
-│ Encrypted files     │  ──────────►  │ Web Search          │
+│ CLI encrypted convos│               │ Inference           │
+│ CLI encrypted files │  ──────────►  │ Web Search          │
 │ Agents & prefs      │  store:false  │ X Search            │
 │ Local memory        │               │ Code Execution      │
-│ Secure credentials  │               │ store:false sent    │
+│ CLI credentials     │               │ store:false sent    │
 └─────────────────────┘               │ ZDR header checked  │
                                       └─────────────────────┘
                 </pre>

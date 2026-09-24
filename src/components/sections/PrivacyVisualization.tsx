@@ -10,10 +10,10 @@ interface DeviceContent {
 }
 
 const deviceContents: DeviceContent[] = [
-  { label: 'Conversations', icon: <MessageIcon />, encrypted: true },
-  { label: 'Files', icon: <FileIcon />, encrypted: true },
-  { label: 'Agents', icon: <AgentIcon />, encrypted: true },
-  { label: 'Vault', icon: <VaultIcon />, encrypted: true },
+  { label: 'CLI conversations', icon: <MessageIcon />, encrypted: true },
+  { label: 'CLI files', icon: <FileIcon />, encrypted: true },
+  { label: 'CLI agents', icon: <AgentIcon />, encrypted: true },
+  { label: 'CLI vault', icon: <VaultIcon />, encrypted: true },
 ];
 
 function MessageIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -88,7 +88,7 @@ export function PrivacyVisualization() {
   }, []);
 
   return (
-    <div className="relative mx-auto max-w-5xl" role="img" aria-label="Privacy architecture visualization showing encrypted local data flowing to xAI with ZDR verification">
+    <div className="relative mx-auto max-w-5xl" role="img" aria-label="Conceptual CLI privacy architecture showing encrypted local data flowing to xAI with ZDR verification">
       <div className="relative">
         {/* Device */}
         <div className="relative mb-8">
@@ -108,7 +108,7 @@ export function PrivacyVisualization() {
               <div className="flex items-center gap-3 p-4 bg-neutral-950 dark:bg-neutral-200 rounded-xl border border-neutral-800 dark:border-neutral-300 mb-4">
                 <div className="flex items-center gap-2 p-2 bg-accent-500/10 rounded-lg">
                   <VaultIcon className="h-5 w-5 text-accent-500" />
-                  <span className="text-sm font-medium text-neutral-100 dark:text-neutral-900">Local Vault</span>
+                  <span className="text-sm font-medium text-neutral-100 dark:text-neutral-900">CLI Local Vault</span>
                 </div>
                 <span className="flex-1 text-xs text-neutral-500 dark:text-neutral-500 font-mono">AES-256-GCM + Argon2id</span>
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent-500/20 text-accent-500 text-xs font-medium">
@@ -121,7 +121,7 @@ export function PrivacyVisualization() {
               </div>
 
               {/* Device contents */}
-              <div className="space-y-3" role="list" aria-label="Encrypted local data">
+              <div className="space-y-3" role="list" aria-label="CLI encrypted local data">
                 {deviceContents.map((item, index) => (
                   <div
                     key={item.label}
@@ -137,9 +137,9 @@ export function PrivacyVisualization() {
                       <div className="flex items-center gap-2 mt-1">
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent-500/20 text-accent-500 text-xs font-medium">
                           <span className="h-1.5 w-1.5 rounded-full bg-current animate-pulse-subtle" />
-                          Encrypted
+                          CLI encrypted
                         </span>
-                        <span className="text-xs text-neutral-500 dark:text-neutral-500 font-mono">local</span>
+                        <span className="text-xs text-neutral-500 dark:text-neutral-500 font-mono">CLI</span>
                       </div>
                     </div>
                   </div>
@@ -322,7 +322,7 @@ export function PrivacyVisualization() {
               </svg>
               <span className="text-sm font-semibold">Local-First</span>
             </div>
-            <p className="text-xs text-neutral-500 dark:text-neutral-500">All app state encrypted on your device</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-500">CLI storage is encrypted; native client integration is pending</p>
           </div>
           <div className="p-4 bg-neutral-950/50 dark:bg-neutral-200/50 rounded-xl border border-neutral-800/50 dark:border-neutral-300/50">
             <div className="flex items-center justify-center gap-2 mb-2 text-accent-500">

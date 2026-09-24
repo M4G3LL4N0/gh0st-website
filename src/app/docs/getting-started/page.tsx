@@ -7,7 +7,7 @@ import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
 export const metadata: Metadata = {
   title: 'Getting Started — gh0st Docs',
-  description: 'Install and configure gh0st — local-first encrypted AI client for xAI/Grok',
+  description: 'Install and configure the gh0st CLI — the current encrypted local workflow for xAI/Grok',
 };
 
 const prerequisites = [
@@ -50,7 +50,7 @@ export default function GettingStartedPage() {
                 Getting Started
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl">
-                Install, configure, and run gh0st in minutes.
+                Install, configure, and run the gh0st CLI in minutes. Native macOS and browser clients are early in this release candidate.
               </p>
             </header>
 

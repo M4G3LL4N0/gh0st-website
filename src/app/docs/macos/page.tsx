@@ -7,21 +7,20 @@ import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
 export const metadata: Metadata = {
   title: 'macOS App — gh0st Docs',
-  description: 'Build and run gh0st native macOS app via Tauri 2 — ad-hoc signed, Secure Enclave vault, global shortcuts',
+  description: 'Build and run the early gh0st native macOS shell via Tauri 2 — ad-hoc signed, with current limitations documented',
 };
 
 const macFeatures = [
-  { title: 'Native Window', desc: 'Transparent titlebar, custom traffic lights' },
-  { title: 'Menu Bar', desc: 'Full macOS menu with keyboard shortcuts' },
+  { title: 'Native Window', desc: 'Tauri window with macOS integration' },
+  { title: 'Menu Bar', desc: 'Show, lock, and quit actions' },
   { title: 'System Tray', desc: 'Background operation with quick actions' },
   { title: 'Global Shortcut', desc: '⌘⇧G to show/hide from anywhere' },
-  { title: 'File Drag & Drop', desc: 'Native file picker + drag onto window' },
-  { title: 'Dark/Light Sync', desc: 'Follows system appearance automatically' },
-  { title: 'Touchpad Gestures', desc: 'Swipe navigation, pinch zoom' },
-  { title: 'Secure Enclave', desc: 'Hardware-backed vault with Face ID/Touch ID' },
-  { title: 'Auto-Lock', desc: '1/5/15 min, background, screen lock triggers' },
-  { title: 'Background Blur', desc: 'Privacy blur when app loses focus' },
-  { title: 'Restart Persistence', desc: 'Restores window state and session' },
+  { title: 'File Picker', desc: 'File selection through the local web UI' },
+  { title: 'Dark/Light Controls', desc: 'Theme controls in the client UI' },
+  { title: 'Local Conversation UI', desc: 'Chat, model selector, agents, and tools surface' },
+  { title: 'xAI API Integration', desc: 'Responses API client with store=false support' },
+  { title: 'Ad-hoc Distribution', desc: 'Apple Silicon app and DMG with published checksums' },
+  { title: 'Window State', desc: 'Window state plugin and hide/show behavior' },
 ];
 
 const macIssues = [
@@ -29,7 +28,7 @@ const macIssues = [
   { issue: '"Cannot be opened"', fix: 'Right-click → Open' },
   { issue: '"Codesign failed"', fix: 'Use pnpm mac:build (ad-hoc identity "-")' },
   { issue: '"Notarization failed"', fix: 'Requires Apple Developer Program enrollment' },
-  { issue: 'Keychain access denied', fix: 'Allow in System Settings → Privacy & Security' },
+  { issue: 'Gatekeeper blocks the app', fix: 'Right-click → Open, then allow in Privacy & Security' },
 ];
 
 export default function MacOSDocPage() {
@@ -48,7 +47,7 @@ export default function MacOSDocPage() {
                 macOS Native App
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl">
-                Tauri 2 native app with Secure Enclave vault, menu bar, global shortcuts
+                Early Tauri 2 native shell with menu bar, global shortcuts, and a local conversation UI. The native encrypted vault, biometric unlock, auto-lock, and Settings/API-key entry are not wired in this release candidate.
               </p>
             </header>
 
@@ -81,7 +80,7 @@ pnpm mac:dmg      # Creates .dmg installer (3.3 MB)
                 <Card padding="lg">
                   <h3 className="font-semibold text-neutral-100 dark:text-neutral-900 mb-4">Via DMG</h3>
                   <pre className="font-mono text-sm text-neutral-400 dark:text-neutral-600 bg-neutral-950 dark:bg-neutral-100 p-4 rounded-lg overflow-x-auto">
-open gh0st_1.0.0_aarch64.dmg
+open gh0st_1.0.0-rc.1_aarch64.dmg
 # Drag gh0st.app to Applications
 # First run: right-click → Open (ad-hoc signed)
                   </pre>
@@ -104,6 +103,18 @@ open gh0st_1.0.0_aarch64.dmg
                   </Card>
                 ))}
               </div>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-neutral-100 dark:text-neutral-900 mb-6">Current Release-Candidate Limitations</h2>
+              <Card padding="lg" className="border-l-2 border-accent-500">
+                <ul className="space-y-2 text-sm text-neutral-300 dark:text-neutral-700">
+                  <li>• Settings/API-key entry is not wired in the native client.</li>
+                  <li>• Native encrypted persistence, biometric unlock, and auto-lock are not wired yet.</li>
+                  <li>• The browser client uses a local-storage path that is not connected to the encrypted vault.</li>
+                  <li>• Use the CLI for the current encrypted workflow; iOS remains in development.</li>
+                </ul>
+              </Card>
             </section>
 
             <section className="mb-12">

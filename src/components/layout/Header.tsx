@@ -49,7 +49,7 @@ export function Header() {
                 gh0st
               </span>
               <span className="hidden sm:inline-block text-xs text-neutral-500 font-mono">
-                v1.0.0-rc
+                v1.0.0-rc.1
               </span>
             </Link>
           </div>

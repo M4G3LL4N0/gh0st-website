@@ -5,16 +5,20 @@ import { Card } from '@/components/ui/Card';
 import { Button, LinkButton } from '@/components/ui/Button';
 import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
+const releaseUrl = 'https://github.com/M4G3LL4N0/gh0st/releases/tag/v1.0.0-rc.1';
+const macosDmgUrl = 'https://github.com/M4G3LL4N0/gh0st/releases/download/v1.0.0-rc.1/gh0st_1.0.0-rc.1_aarch64.dmg';
+const dmgSha256 = 'cc6e9cb35d6b6908e4791fe3b815c0355487dd3d70c25c3f898250e46491cb19';
+
 export const metadata: Metadata = {
   title: 'Download — gh0st',
-  description: 'Download gh0st for macOS, CLI, or browser. Source builds available now. Public binaries coming with release.',
+  description: 'Download the early gh0st v1.0.0-rc.1 macOS Apple Silicon release, or build the CLI and browser UI from source.',
 };
 
 const platforms = [
   {
     id: 'macos',
     name: 'macOS (Apple Silicon)',
-    status: 'From source / Public DMG coming',
+    status: 'v1.0.0-rc.1 available',
     statusColor: 'accent',
     icon: (
       <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -23,14 +27,14 @@ const platforms = [
     ),
     requirements: 'macOS 13+, Apple Silicon (M1/M2/M3)',
     features: [
-      'Native .app bundle',
-      'DMG installer (3.3 MB)',
-      'Secure Enclave vault',
-      'Face ID / Touch ID unlock',
+      'Native Tauri shell',
+      'DMG installer (3.3 MB) with SHA-256 checksums',
       'Global shortcut (⌘⇧G)',
       'Menu bar & system tray',
-      'File drag & drop',
-      'Auto-lock (1/5/15 min)',
+      'Local conversation UI',
+      'xAI Responses API integration',
+      'File picker integration',
+      'Window hide/show controls',
     ],
     buildFromSource: [
       'git clone https://github.com/M4G3LL4N0/gh0st.git',
@@ -40,9 +44,9 @@ const platforms = [
       'pnpm mac:dmg',
     ],
     cta: {
-      label: 'Build from Source',
-      href: '/docs/macos',
-      variant: 'outline' as const,
+      label: 'Download DMG',
+      href: macosDmgUrl,
+      variant: 'primary' as const,
     },
   },
   {
@@ -97,7 +101,7 @@ const platforms = [
       'File drag & drop',
       'Agent selector & tools',
       'Privacy Inspector',
-      'IndexedDB encrypted storage',
+      'Local browser UI foundation',
       'Dark/Light mode',
       'Responsive design',
     ],
@@ -131,8 +135,8 @@ const platforms = [
       'Touch targets & gestures',
       'Dark/Light & reduced motion',
       'Background privacy blur',
-      'Secure Enclave vault',
-      'Face ID / Touch ID',
+      'Planned encrypted local vault',
+      'Planned biometric unlock',
       'Simulator build pending tooling',
     ],
     buildFromSource: [
@@ -151,10 +155,10 @@ const platforms = [
 ];
 
 const verification = [
-  'Download the DMG from GitHub Releases',
-  'Run: <code>shasum -a 256 gh0st_*.dmg</code>',
-  'Compare with <code>SHA256SUMS.txt</code> from release',
-  'Verify signature: <code>codesign -dv gh0st.app</code>',
+  `Download <code>gh0st_1.0.0-rc.1_aarch64.dmg</code> from <a class="text-accent-500 hover:underline" href="${releaseUrl}" target="_blank" rel="noopener noreferrer">GitHub Releases</a>`,
+  'Run: <code>shasum -a 256 gh0st_1.0.0-rc.1_aarch64.dmg</code>',
+  `Compare with <code>SHA256SUMS.txt</code> from the release. Expected SHA-256: <code>${dmgSha256}</code>`,
+  'Verify the ad-hoc signature: <code>codesign --verify --deep --strict gh0st.app</code>',
 ];
 
 export default function DownloadPage() {
@@ -173,7 +177,10 @@ export default function DownloadPage() {
                 Download gh0st
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl mx-auto">
-                Choose your platform. Source builds work today. Public binaries with checksums coming with the first release.
+                Download the verified macOS Apple Silicon release, or build the CLI and browser UI from source.
+              </p>
+              <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-500 max-w-2xl mx-auto">
+                <strong>Early release candidate:</strong> the macOS client is a native shell. Settings/API-key entry, native encrypted persistence, biometric unlock, and auto-lock are not wired yet; use the CLI for the current encrypted workflow.
               </p>
             </header>
 
@@ -250,8 +257,7 @@ export default function DownloadPage() {
                   ))}
                 </ol>
                 <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
-                  <strong>Note:</strong> Current builds are ad-hoc signed (identity <code className="font-mono">"-"</code>). macOS will prompt to allow the app in Privacy & Security.
-                  Notarized builds require Apple Developer Program enrollment.
+                  <strong>Note:</strong> This build is ad-hoc signed (identity <code className="font-mono">"-"</code>) and is not notarized. macOS may require approval in Privacy & Security on first launch. Developer ID signing and notarization require Apple Developer Program enrollment. The native client’s encrypted vault, biometric unlock, auto-lock, and Settings/API-key entry are not wired in this release candidate.
                 </p>
               </Card>
             </section>
@@ -264,17 +270,25 @@ export default function DownloadPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <Card padding="lg" className="text-center">
                   <h3 className="text-lg font-semibold text-neutral-100 dark:text-neutral-900 mb-2">Latest Release</h3>
-                  <p className="text-3xl font-bold text-accent-500 mb-2">v1.0.0-rc</p>
-                  <p className="text-neutral-500 dark:text-neutral-500">Release candidate</p>
+                  <p className="text-3xl font-bold text-accent-500 mb-2">v1.0.0-rc.1</p>
+                  <p className="text-neutral-500 dark:text-neutral-500">Public prerelease · Apple Silicon</p>
                   <LinkButton
-                    href="https://github.com/M4G3LL4N0/gh0st/releases"
+                    href={macosDmgUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    variant="outline"
+                    variant="primary"
                     className="mt-4"
                   >
-                    View All Releases
+                    Download DMG
                   </LinkButton>
+                  <a
+                    href={releaseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-3 text-sm text-accent-500 hover:underline"
+                  >
+                    View release details
+                  </a>
                 </Card>
                 <Card padding="lg" className="text-center">
                   <h3 className="text-lg font-semibold text-neutral-100 dark:text-neutral-900 mb-2">Changelog</h3>
@@ -311,7 +325,7 @@ export default function DownloadPage() {
                 Ready to get started?
               </h2>
               <p className="text-neutral-400 dark:text-neutral-500 mb-8 max-w-xl mx-auto">
-                Clone the repo, build locally, and run gh0st today. Public binaries coming with the first stable release.
+                Download the public macOS prerelease, or clone the repo to build the CLI and browser UI from source.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a

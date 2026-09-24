@@ -16,7 +16,7 @@ export function Footer() {
               <span className="text-lg font-semibold text-neutral-100 dark:text-neutral-900">gh0st</span>
             </Link>
             <p className="mt-3 text-sm text-neutral-400 dark:text-neutral-600 leading-relaxed max-w-xs">
-              Private AI client. Local-first, encrypted, xAI-powered.
+              Private AI client. Local-first, xAI-powered, and explicit about what this release supports.
               Built for those who believe privacy is a feature, not a setting.
             </p>
           </div>

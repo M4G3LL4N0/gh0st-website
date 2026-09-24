@@ -32,12 +32,12 @@ const trustZones: TrustZone[] = [
       </svg>
     ),
     items: [
-      { label: 'Conversations', detail: 'AES-256-GCM encrypted, local only', protected: true },
-      { label: 'Files & Attachments', detail: 'Encrypted at rest, local extraction', protected: true },
-      { label: 'Agents & Preferences', detail: 'Encrypted in vault, never synced', protected: true },
-      { label: 'Local Memory', detail: 'Lexical search index, on-device only', protected: true },
-      { label: 'Encrypted Continuation', detail: 'Encrypted conversation state', protected: true },
-      { label: 'Secure Credentials', detail: 'Keychain / Secure Enclave / Argon2id', protected: true },
+      { label: 'Conversations', detail: 'CLI encrypted; native client persistence pending', protected: true },
+      { label: 'Files & Attachments', detail: 'CLI encrypted; native integration pending', protected: true },
+      { label: 'Agents & Preferences', detail: 'CLI encrypted; native integration pending', protected: true },
+      { label: 'Local Memory', detail: 'Workspace modules available; native wiring pending', protected: true },
+      { label: 'Encrypted Continuation', detail: 'CLI workflow; native wiring pending', protected: true },
+      { label: 'Secure Credentials', detail: 'CLI vault; native Keychain / Secure Enclave pending', protected: true },
     ],
   },
   {
@@ -83,8 +83,8 @@ const securityProps = [
   { label: 'Key Derivation', value: 'HKDF-SHA-256', detail: 'Purpose-separated subkeys from master' },
   { label: 'Passphrase KDF', value: 'Argon2id', detail: '64MB memory, 3 iterations, 4 parallel' },
   { label: 'Nonce', value: '12-byte random', detail: 'Per encryption, never reused' },
-  { label: 'Storage', value: 'Encrypted at rest', detail: 'TLS 1.3 in transit to xAI only' },
-  { label: 'Vault Lock', value: 'Auto + Manual', detail: 'Timer, background, screen lock, manual' },
+  { label: 'Storage', value: 'CLI encrypted', detail: 'Native client integration pending' },
+  { label: 'Vault Lock', value: 'CLI manual', detail: 'Native auto-lock integration pending' },
   { label: 'ZDR Check', value: 'Response header', detail: 'x-zero-data-retention: true cached 30min' },
   { label: 'Telemetry', value: 'None by default', detail: 'No analytics, no crash reporting' },
 ];

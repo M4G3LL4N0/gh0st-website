@@ -43,9 +43,9 @@ const threatModel = [
 ];
 
 const vaultOps = [
-  { operation: 'Lock', trigger: 'Manual / Timer / Background / Screen lock' },
-  { operation: 'Unlock', trigger: 'Passphrase / Face ID / Touch ID / Secure Enclave' },
-  { operation: 'Rotate keys', trigger: 'Automatic on config change / passphrase change' },
+  { operation: 'Lock', trigger: 'CLI manual lock; native integration pending' },
+  { operation: 'Unlock', trigger: 'CLI passphrase flow; native integration pending' },
+  { operation: 'Rotate keys', trigger: 'CLI export/import workflow' },
   { operation: 'Wipe', trigger: 'Explicit <code>gh0st wipe --force</code>' },
 ];
 
@@ -65,8 +65,7 @@ export default function SecurityPage() {
                 Security Architecture
               </h1>
               <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl mx-auto">
-                Technical details on encryption, threat model, and security boundaries.
-                No marketing fluff — just the architecture.
+                Technical details on encryption, threat model, and security boundaries. The CLI provides the current encrypted workflow; native macOS vault and biometric integration remain pending.
               </p>
             </header>
 

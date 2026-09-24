@@ -43,7 +43,7 @@ export default function HomePage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500" />
                 </span>
-                Local-first • Encrypted • ZDR-aware • Open source
+                Local-first • ZDR-aware • Open source • Early macOS rc
               </div>
 
               {/* Main Headline */}
@@ -63,7 +63,7 @@ export default function HomePage() {
               {/* Subheadline */}
               <p className="text-xl sm:text-2xl text-neutral-400 dark:text-neutral-600 max-w-3xl mx-auto animate-slide-up animate-delay-300 text-balance leading-relaxed">
                 Your conversations, files, and agents stay under your control.
-                Grok handles inference. gh0st handles everything that should remain yours.
+                The CLI is the current complete workflow; the macOS and browser clients are early release-candidate surfaces.
               </p>
 
               {/* CTAs */}
@@ -207,7 +207,7 @@ export default function HomePage() {
               Ready to run gh0st?
             </h2>
             <p className="text-lg text-neutral-400 dark:text-neutral-600">
-              Choose your platform. Source builds work today. Public binaries coming with the first release.
+              Download the verified v1.0.0-rc.1 macOS release, or build the CLI and browser UI from source.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <LinkButton href="/download" size="lg" variant="primary">

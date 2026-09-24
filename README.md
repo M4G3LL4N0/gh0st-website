@@ -1,6 +1,6 @@
 # gh0st Website
 
-Official website for gh0st — local-first encrypted private AI.
+Official website for gh0st — local-first private AI with a current encrypted CLI workflow and early native clients.
 
 ## Development
 

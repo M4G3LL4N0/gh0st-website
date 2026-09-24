@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/Card';
 const features = [
   {
     title: 'Conversations',
-    description: 'Streaming Grok chat with local encrypted persistence. Token-by-token rendering, conversation branching, Markdown with syntax highlighting.',
+    description: 'Streaming Grok chat in the local UI. The CLI provides the current encrypted persistence workflow; native client persistence is still being wired.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h12M8 12l-5 5M8 12l-5-5" />
@@ -15,7 +15,7 @@ const features = [
   },
   {
     title: 'Encrypted Local Storage',
-    description: 'CLI: file-based JSON in ~/.gh0st/storage/. Browser: IndexedDB via Dexie. macOS/iOS: Keychain/Secure Enclave. AES-256-GCM + Argon2id throughout.',
+    description: 'CLI: file-based encrypted storage in ~/.gh0st/storage/. Browser and native clients currently use a local-storage path; native encrypted persistence and Secure Enclave integration are pending.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -24,7 +24,7 @@ const features = [
   },
   {
     title: 'Files & Local Search',
-    description: 'Drag & drop PDF, DOCX, code, images. Local text extraction (pdf-parse, mammoth). Lexical search index. Encrypted chunked retrieval (1000 tokens, 200 overlap).',
+    description: 'Attachment and local-search modules are available in the workspace. The current native client flow is early; use the CLI for the current encrypted path in this rc.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -52,7 +52,7 @@ const features = [
   },
   {
     title: 'Privacy Inspector',
-    description: 'Real-time dashboard: vault state, ZDR verification timestamp, active tools, MCP destinations, telemetry toggles. Privacy made observable, not promised.',
+    description: 'Privacy status surfaces and ZDR verification modules are available in the workspace. Native macOS status wiring is incomplete in this release candidate.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -71,7 +71,7 @@ const features = [
   },
   {
     title: 'Browser & macOS',
-    description: 'Local web UI via `gh0st web` (port 1420). Native macOS app via Tauri 2 with transparent titlebar, menu bar, global shortcut (⌘⇧G), Secure Enclave vault.',
+    description: 'Local web UI via `gh0st web` (port 1420). Native macOS app via Tauri 2 with a menu bar, global shortcut (⌘⇧G), and an early client shell; Settings and native vault integration are pending.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -80,7 +80,7 @@ const features = [
   },
   {
     title: 'Import / Export',
-    description: 'Encrypted backups with passphrase protection. Portable between devices. Plaintext export available for data portability. Versioned format with integrity checks.',
+    description: 'Encrypted export/import and plaintext portability are implemented in the CLI. Native client integration is not yet wired.',
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -97,7 +97,7 @@ export function Features() {
           Features That Respect Your Data
         </h2>
         <p className="text-lg text-neutral-400 dark:text-neutral-600 max-w-2xl mx-auto">
-          Every capability designed around local-first encryption and explicit trust boundaries.
+          Every capability is designed around local-first boundaries and explicit limitations. The CLI is the current encrypted workflow; native client integrations are early in this release candidate.
         </p>
       </div>
 

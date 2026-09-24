@@ -1,7 +1,7 @@
 export const metadata = {
   metadataBase: new URL('https://gh0st.noaerth.com'),
   title: 'gh0st — Private AI that keeps the workspace yours',
-  description: 'Local-first encrypted AI for xAI/Grok with conversations, files, agents, CLI, browser and macOS support, plus verifiable Zero Data Retention.',
+  description: 'Local-first AI for xAI/Grok with a current encrypted CLI workflow, early browser and macOS clients, and runtime ZDR verification.',
   keywords: ['gh0st', 'AI', 'privacy', 'encryption', 'xAI', 'Grok', 'local-first', 'zero-data-retention', 'CLI', 'macOS', 'open-source'],
   authors: [{ name: 'gh0st Contributors' }],
   creator: 'gh0st',
@@ -13,7 +13,7 @@ export const metadata = {
     url: 'https://gh0st.noaerth.com',
     siteName: 'gh0st',
     title: 'gh0st — Private AI that keeps the workspace yours',
-    description: 'Local-first encrypted AI for xAI/Grok with conversations, files, agents, CLI, browser and macOS support, plus verifiable Zero Data Retention.',
+    description: 'Local-first AI for xAI/Grok with a current encrypted CLI workflow, early browser and macOS clients, and runtime ZDR verification.',
     images: [
       {
         url: '/og-image.svg',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'gh0st — Private AI that keeps the workspace yours',
-    description: 'Local-first encrypted AI for xAI/Grok with conversations, files, agents, CLI, browser and macOS support, plus verifiable Zero Data Retention.',
+    description: 'Local-first AI for xAI/Grok with a current encrypted CLI workflow, early browser and macOS clients, and runtime ZDR verification.',
     images: ['/og-image.svg'],
     creator: '@gh0st',
   },

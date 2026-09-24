@@ -27,17 +27,22 @@ const faqs = [
   },
   {
     question: 'Does gh0st store conversations in the cloud?',
-    answer: 'Not by default. All conversations, files, agents, and preferences are stored locally on your device, encrypted with AES-256-GCM. gh0st has no backend server and no hosted database.',
+    answer: 'The CLI stores conversations, files, agents, and preferences locally with AES-256-GCM encryption. The browser and native clients currently use a local-storage path that is not yet connected to the encrypted vault. gh0st has no backend server or hosted database.',
     category: 'Storage',
   },
   {
     question: 'Does gh0st use Signal Protocol?',
-    answer: 'No. gh0st applies Signal-inspired privacy principles (local-first, encrypted, minimal metadata) but uses its own documented encryption architecture: AES-256-GCM with HKDF-SHA-256 key derivation and Argon2id passphrase protection. The threat model and cryptography are documented in the repository.',
+    answer: 'No. gh0st applies Signal-inspired privacy principles (local-first, encrypted, minimal metadata) but uses its own documented encryption architecture: AES-256-GCM with HKDF-SHA-256 key derivation and Argon2id passphrase protection in the CLI. The threat model and cryptography are documented in the repository; native vault integration remains pending.',
     category: 'Crypto',
   },
   {
     question: 'Is iOS available?',
     answer: 'iOS is in development. The code is complete (Swift/Tauri 2), but simulator and device builds require xcodegen and cocoapods (via Homebrew), which are not yet configured in CI. TestFlight distribution will require Apple Developer Program enrollment. Current status: code ready, tooling pending.',
+    category: 'Platform',
+  },
+  {
+    question: 'Can I download a macOS app?',
+    answer: 'Yes. The <code>v1.0.0-rc.1</code> Apple Silicon DMG is available from the <a href="https://github.com/M4G3LL4N0/gh0st/releases/tag/v1.0.0-rc.1" target="_blank" rel="noopener noreferrer" className="text-accent-500 hover:underline">public GitHub Release</a>. Verify the published SHA-256 checksum before installation. This build is ad-hoc signed and not notarized, so macOS may require approval in Privacy & Security. The native client is an early shell; Settings/API-key entry and native vault integration are pending.',
     category: 'Platform',
   },
   {
@@ -67,7 +72,7 @@ const faqs = [
   },
   {
     question: 'What files can I attach?',
-    answer: 'Text: .txt, .md, .json, .csv, .js, .ts, .py, .html, .css, .xml, .yaml. PDF: .pdf (text extraction via pdf-parse). Documents: .docx (via mammoth). Images: .png, .jpg, .webp, .gif (base64 for multimodal). All processed locally, encrypted, and chunked for retrieval.',
+    answer: 'Text: .txt, .md, .json, .csv, .js, .ts, .py, .html, .css, .xml, .yaml. PDF: .pdf (text extraction via pdf-parse). Documents: .docx (via mammoth). Images: .png, .jpg, .webp, .gif (base64 for multimodal). The workspace provides local processing and retrieval modules; native client integration and encrypted attachment persistence are still being wired.',
     category: 'Files',
   },
   {
@@ -77,7 +82,7 @@ const faqs = [
   },
   {
     question: 'How do I update gh0st?',
-    answer: 'For source builds: <code>git pull && pnpm install && pnpm build</code>. For macOS DMG: download the latest release from GitHub. For CLI: rebuild from source. Auto-updates via Tauri updater will be enabled once release signing keys are configured (not yet available).',
+    answer: 'For source builds: <code>git pull && pnpm install && pnpm build</code>. For macOS, download the current DMG from the <a href="https://github.com/M4G3LL4N0/gh0st/releases" target="_blank" rel="noopener noreferrer" className="text-accent-500 hover:underline">GitHub Releases</a> page and verify its SHA-256 checksum. For CLI: rebuild from source. Auto-updates via Tauri updater will be enabled once release signing keys are configured (not yet available).',
     category: 'Updates',
   },
 ];
