@@ -1,0 +1,7 @@
+# gh0st — Private AI that keeps the workspace yours
+# https://gh0st.noaerth.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gh0st.noaerth.com/sitemap.xml

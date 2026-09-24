@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">gh0st — Private AI that keeps the workspace yours</title>
+  <desc id="desc">Local-first encrypted AI for xAI and Grok.</desc>
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <circle cx="104" cy="104" r="54" fill="none" stroke="#22c55e" stroke-width="2" opacity=".35" stroke-dasharray="6 8"/>
+  <circle cx="104" cy="104" r="43" fill="none" stroke="#fafafa" stroke-width="3" opacity=".9"/>
+  <ellipse cx="104" cy="100" rx="15" ry="19" fill="#22c55e" opacity=".18"/>
+  <circle cx="93" cy="92" r="3" fill="#22c55e" opacity=".8"/>
+  <circle cx="115" cy="92" r="3" fill="#22c55e" opacity=".8"/>
+  <text x="190" y="98" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="38" font-weight="600">gh0st</text>
+  <text x="104" y="270" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="64" font-weight="700">Private AI that keeps</text>
+  <text x="104" y="344" fill="#22c55e" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="64" font-weight="700">the workspace yours.</text>
+  <text x="104" y="420" fill="#a3a3a3" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="24">LOCAL · ENCRYPTED · OPEN SOURCE</text>
+  <path d="M104 500H1096" stroke="#262626"/>
+  <text x="104" y="548" fill="#737373" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">xAI / Grok inference boundary · store=false · ZDR-aware</text>
+</svg>
