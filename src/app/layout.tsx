@@ -1,5 +1,7 @@
+import '@/styles/globals.css';
+
 export const metadata = {
-  metadataBase: new URL('https://gh0st.noaerth.com'),
+  metadataBase: new URL('https://gh0st-six.vercel.app'),
   title: 'gh0st — Private AI that keeps the workspace yours',
   description: 'Local-first AI for xAI/Grok with a current encrypted CLI workflow, early browser and macOS clients, and runtime ZDR verification.',
   keywords: ['gh0st', 'AI', 'privacy', 'encryption', 'xAI', 'Grok', 'local-first', 'zero-data-retention', 'CLI', 'macOS', 'open-source'],
@@ -10,7 +12,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gh0st.noaerth.com',
+    url: 'https://gh0st-six.vercel.app',
     siteName: 'gh0st',
     title: 'gh0st — Private AI that keeps the workspace yours',
     description: 'Local-first AI for xAI/Grok with a current encrypted CLI workflow, early browser and macOS clients, and runtime ZDR verification.',
@@ -44,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
