@@ -3,29 +3,26 @@
 import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Button, LinkButton } from '@/components/ui/Button';
+import { LinkButton } from '@/components/ui/Button';
 
-function VaultPanel() {
-  const rows = [
-    ['conversations', 'on device'],
-    ['files', 'on device'],
-    ['agents', 'on device'],
-    ['inference', 'xAI · store=false'],
+function Boundary() {
+  const gates = [
+    { k: '01', name: 'Vault', detail: 'Conversations, files, and agents stay encrypted on this machine.' },
+    { k: '02', name: 'store=false', detail: 'The prompt leaves only as an inference request with storage turned off.' },
+    { k: '03', name: 'Header', detail: 'gh0st reads x-zero-data-retention. Missing header, strict mode stops.' },
   ];
   return (
-    <figure className="rounded-xl border border-neutral-800 bg-neutral-950 p-5 text-neutral-100" aria-label="What stays local">
-      <figcaption className="font-mono text-[11px] tracking-[0.16em] uppercase text-neutral-500">
-        ~/gh0st vault
-      </figcaption>
-      <ul className="mt-4 divide-y divide-neutral-800 font-mono text-sm">
-        {rows.map(([name, where]) => (
-          <li key={name} className="flex items-center justify-between gap-4 py-3">
-            <span>{name}</span>
-            <span className="text-accent-500">{where}</span>
-          </li>
-        ))}
-      </ul>
-    </figure>
+    <ol className="grid gap-3" aria-label="Where a prompt is allowed to go">
+      {gates.map((gate) => (
+        <li key={gate.k} className="grid grid-cols-[auto_1fr] gap-4 border-l-2 border-accent-500/70 py-3 pl-4">
+          <span className="font-mono text-xs text-accent-500">{gate.k}</span>
+          <div>
+            <p className="font-mono text-sm text-neutral-100">{gate.name}</p>
+            <p className="mt-1 text-sm text-neutral-400">{gate.detail}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -45,7 +42,7 @@ export default function HomePage() {
               </p>
               <h1
                 id="hero-heading"
-                className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-100 dark:text-neutral-900 text-balance"
+                className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-[#f5f5f5] text-balance"
               >
                 Talk to Grok. Keep the workspace on your machine.
               </h1>
@@ -54,10 +51,11 @@ export default function HomePage() {
                 The macOS app is an early release candidate. The browser UI is local. iOS is not ready.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="https://github.com/M4G3LL4N0/gh0st" className="w-full sm:w-auto">
-                  <Button size="lg" variant="primary" className="w-full sm:w-auto">
-                    Install the CLI
-                  </Button>
+                <a
+                  href="https://github.com/M4G3LL4N0/gh0st"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-accent-500 px-6 py-3 text-base font-medium text-neutral-950 sm:w-auto"
+                >
+                  Install the CLI
                 </a>
                 <LinkButton href="/download" size="lg" variant="outline" className="w-full sm:w-auto">
                   macOS rc download
@@ -67,27 +65,34 @@ export default function HomePage() {
                 Inference goes to xAI with <code>store=false</code>. Zero Data Retention applies only when your xAI team has it enabled.
               </p>
             </div>
-            <VaultPanel />
+            <Boundary />
           </div>
         </section>
 
-        <section className="px-4 sm:px-6 lg:px-8 pb-20" aria-label="What is actually ready">
-          <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 lg:grid-cols-3">
-            <a href="/docs/cli" className="bg-neutral-950 p-6 hover:bg-neutral-900">
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent-500">Ready</p>
-              <h2 className="mt-3 text-xl text-neutral-100">CLI</h2>
-              <p className="mt-2 text-sm text-neutral-400">Chat, files, agents, and the encrypted vault. This is the product.</p>
-            </a>
-            <a href="/download" className="bg-neutral-950 p-6 hover:bg-neutral-900">
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-neutral-500">Early</p>
-              <h2 className="mt-3 text-xl text-neutral-100">macOS and browser</h2>
-              <p className="mt-2 text-sm text-neutral-400">v1.0.0-rc.1 is an early shell. It is ad-hoc signed and not notarized.</p>
-            </a>
-            <a href="/security" className="bg-neutral-950 p-6 hover:bg-neutral-900">
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-neutral-500">Conditional</p>
-              <h2 className="mt-3 text-xl text-neutral-100">ZDR</h2>
-              <p className="mt-2 text-sm text-neutral-400">gh0st sends store=false and checks the header. It cannot grant ZDR by itself.</p>
-            </a>
+        <section className="px-4 pb-20 sm:px-6 lg:px-8" aria-label="What to run">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+            <div>
+              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-neutral-500">The working path</h2>
+              <pre className="mt-4 overflow-x-auto rounded-lg border border-neutral-800 bg-black p-4 font-mono text-sm text-neutral-200"><code>{`git clone https://github.com/M4G3LL4N0/gh0st.git
+cd gh0st
+pnpm install && pnpm build
+./apps/cli/dist/cli.js doctor`}</code></pre>
+              <p className="mt-3 text-sm text-neutral-400">
+                <a className="text-accent-500" href="/docs/cli">CLI docs</a> are the product.
+                The <a className="text-accent-500" href="/download">macOS rc</a> is an early, unnotarized shell.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-neutral-500">What gh0st will not pretend</h2>
+              <ul className="mt-4 space-y-3 text-sm text-neutral-300">
+                <li>It does not grant Zero Data Retention. Your xAI team does, and the response header is the check.</li>
+                <li>It does not ship a finished iOS app.</li>
+                <li>The browser UI stays on your machine. It is not a hosted chat.</li>
+              </ul>
+              <p className="mt-4 text-sm">
+                <a className="text-accent-500" href="/security">Security notes</a>
+              </p>
+            </div>
           </div>
         </section>
       </main>
