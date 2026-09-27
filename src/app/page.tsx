@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="pt-16">
+      <main id="main-content" className="bg-neutral-950 pt-16 text-neutral-100">
         <section
           className="px-4 sm:px-6 lg:px-8 pt-24 pb-16"
           aria-labelledby="hero-heading"
@@ -72,7 +72,7 @@ export default function HomePage() {
         </section>
 
         <section className="px-4 sm:px-6 lg:px-8 pb-20" aria-label="What is actually ready">
-          <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 sm:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 lg:grid-cols-3">
             <a href="/docs/cli" className="bg-neutral-950 p-6 hover:bg-neutral-900">
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-accent-500">Ready</p>
               <h2 className="mt-3 text-xl text-neutral-100">CLI</h2>
