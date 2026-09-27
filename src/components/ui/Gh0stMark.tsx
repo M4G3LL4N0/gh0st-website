@@ -14,7 +14,9 @@ export function Gh0stMark({
       fill="none"
       aria-hidden="true"
       focusable="false"
-      className={className}
+      width={32}
+      height={32}
+      className={className || 'h-8 w-8'}
       {...props}
       role="img"
       aria-label={ariaLabel}

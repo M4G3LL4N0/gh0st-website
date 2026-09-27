@@ -16,6 +16,15 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { Gh0stMark } from '@/components/ui/Gh0stMark';
 
 const navItems = [
-  { href: '#features', label: 'Features' },
-  { href: '#privacy', label: 'Privacy' },
-  { href: '/docs/getting-started', label: 'Docs' },
+  { href: '/docs/cli', label: 'CLI' },
   { href: '/security', label: 'Security' },
+  { href: '/docs/getting-started', label: 'Docs' },
   { href: '/download', label: 'Download' },
 ];
 
