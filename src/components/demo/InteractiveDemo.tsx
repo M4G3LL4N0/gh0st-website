@@ -62,7 +62,7 @@ const privacyInspectorState = {
   conversations: { status: 'This device', color: 'accent' },
   files: { status: 'This device', color: 'accent' },
   xaiStore: { status: 'store=false', color: 'accent' },
-  zdr: { status: 'VERIFIED — DEMO', color: 'accent' },
+  zdr: { status: 'Not granted by gh0st', color: 'accent' },
   lastChecked: '3 minutes ago',
   telemetry: { status: 'Off', color: 'neutral' },
   analytics: { status: 'None', color: 'neutral' },
