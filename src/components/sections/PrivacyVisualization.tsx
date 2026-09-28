@@ -67,23 +67,18 @@ function PacketIcon({ className = 'h-3 w-3' }: { className?: string }) {
 
 export function PrivacyVisualization() {
   const [animationPhase, setAnimationPhase] = useState(0);
-  const [zdrVerified, setZdrVerified] = useState(false);
 
   useEffect(() => {
     const phases = [0, 1, 2, 3, 4];
     let index = 0;
-    
+
     const interval = setInterval(() => {
       index = (index + 1) % phases.length;
       setAnimationPhase(phases[index]);
     }, 5000);
 
-    // Simulate ZDR verification after first cycle
-    const zdrTimeout = setTimeout(() => setZdrVerified(true), 8000);
-
     return () => {
       clearInterval(interval);
-      clearTimeout(zdrTimeout);
     };
   }, []);
 
@@ -252,39 +247,12 @@ export function PrivacyVisualization() {
 
               {/* ZDR Verification badge */}
               <div
-                className={`mt-4 p-4 rounded-xl text-center transition-all duration-500 ${
-                  zdrVerified
-                    ? 'bg-accent-500/10 border border-accent-500/30'
-                    : 'bg-neutral-800/50 border border-neutral-700/50'
-                }`}
+                className="mt-4 p-4 rounded-xl text-center bg-neutral-800/50 border border-neutral-700/50"
                 role="status"
-                aria-live="polite"
               >
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  {zdrVerified ? (
-                    <>
-                      <svg className="h-5 w-5 text-accent-500 animate-pulse-subtle" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-sm font-semibold text-accent-500">ZDR verification available</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg className="h-5 w-5 text-neutral-500 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                      </svg>
-                      <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500">Verifying ZDR…</span>
-                    </>
-                  )}
-                </div>
-                <p className="text-xs text-neutral-500 dark:text-neutral-500 max-w-xs mx-auto">
-                  {zdrVerified
-                    ? 'Conceptual response: x-zero-data-retention: true'
-                    : 'Checking xAI response header for ZDR confirmation…'}
-                </p>
-                <p className="text-[10px] text-neutral-600 dark:text-neutral-400 mt-1 font-mono">
-                  DEMO MODE — Not your actual xAI account status
+                <p className="text-sm font-semibold text-neutral-100">Header check, not a grant</p>
+                <p className="text-xs text-neutral-400 max-w-xs mx-auto mt-2">
+                  gh0st sends store=false and reads x-zero-data-retention. A missing header stops strict mode. Your xAI team enables retention policy. This diagram does not.
                 </p>
               </div>
 
@@ -338,9 +306,9 @@ export function PrivacyVisualization() {
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-sm font-semibold">ZDR Verified</span>
+              <span className="text-sm font-semibold">Header check</span>
             </div>
-            <p className="text-xs text-neutral-500 dark:text-neutral-500">Runtime check of x-zero-data-retention header</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-500">Reads x-zero-data-retention. Does not grant Zero Data Retention.</p>
           </div>
         </div>
       </div>

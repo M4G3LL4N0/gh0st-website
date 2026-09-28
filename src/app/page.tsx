@@ -4,6 +4,8 @@ import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { LinkButton } from '@/components/ui/Button';
+import { PrivacyVisualization } from '@/components/sections/PrivacyVisualization';
+import { CliShowcase } from '@/components/sections/CliShowcase';
 
 function Boundary() {
   const gates = [
@@ -68,6 +70,20 @@ export default function HomePage() {
             <Boundary />
           </div>
         </section>
+
+        <section className="px-4 pb-8 sm:px-6 lg:px-8" aria-label="Privacy boundary">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-neutral-500">Where a prompt is allowed to go</h2>
+            <p className="mt-3 max-w-2xl text-sm text-neutral-400">
+              The workspace stays on this machine. Inference is a request with storage turned off. The response header is the check.
+            </p>
+            <div className="mt-8">
+              <PrivacyVisualization />
+            </div>
+          </div>
+        </section>
+
+        <CliShowcase />
 
         <section className="px-4 pb-20 sm:px-6 lg:px-8" aria-label="What to run">
           <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
