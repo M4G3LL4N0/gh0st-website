@@ -1,5 +1,21 @@
 # gh0st Website
 
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/hero-reduced.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/hero/hero-light.svg">
+    <img src="assets/hero/hero-motion.svg" alt="gh0st-website — animated project plate showing approach &rarr; detect &rarr; contain &rarr; close. Motion depicts this project's real state transition." width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/computational-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/hero/computational-light.svg">
+    <img src="assets/hero/computational-motion.svg" alt="State machine: approach &rarr; detect &rarr; contain &rarr; close." width="100%">
+  </picture>
+</p>
+
 Official website for gh0st — local-first private AI with a current encrypted CLI workflow and early native clients.
 
 ## Development
